@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const http = axios.create({ baseURL: "/api", timeout: 90000 });
+const http = axios.create({
+    baseURL: import.meta.env.VITE_API_URL || "/api",
+    timeout: 90000,
+});
 
 /** Turns any failure into a short, user-friendly message. */
 export function friendlyError(err) {
